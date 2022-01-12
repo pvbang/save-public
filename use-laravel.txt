@@ -1,0 +1,68 @@
+-- Cài đặt laravel:
+composer create-project laravel/laravel laravel-ok-luon --prefer-dist
+cp .env.example .env
+composer update
+php artisan key:generate
+
+-- Mở laravel:
+php artisan serve
+
+-- Authentication laravel 8:
+php artisan migrate
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+npm install
+npm run dev
+php artisan migrate:fresh
+
+-- Kiểm tra phiên bản:
+php artisan -v
+
+-- Database:
+.env: php artisan config:cache
+
+	- Migration:
+	php artisan migrate		// up
+	php artisan migrate:rollback	// down
+	php artisan migrate:fresh
+	php artisan migrate:fresh --seed
+
+-- Tạo migration:
+php artisan make:migration create_name_table
+
+-- Tạo model:
+php artisan make:model Name
+
+-- Tạo controller:
+php artisan make:controller NameController 
+// php artisan make:controller NameController --resource
+
+-- Seeder:
+php artisan make:seeder NameSeeder 
+
+-- Tải về, nếu không có vendor và .env
+
+composer install 	-- hoặc composer install --ignore-platform-reqs
+npm install
+npm run dev
+cp .env.example .env
+php artisan migrate
+php artisan key:generate
+php artisan db:seed
+php artisan serve
+
+-- Trường hợp git về từ github:
+
+1. Tạo database có tên: weblaravel-shoesshop (utf8_unicode_ci)
+2. Mở Terminal của Visual Studio Code.
+3. Gõ lần lượt các lệnh: 
+	cp .env.example .env
+	composer install (nếu không được thì composer update, không được tiếp thì composer install --ignore-platform-reqs)
+	npm install (nếu không được thì npm update, không được tiếp thì npm install --ignore-platform-reqs)
+	npm run dev
+	php artisan migrate:fresh --seed
+	php artisan key:generate
+	xóa folder "storage" ở trong folder "public" (trong \WebLaravel-ShoesShop\public\)
+	php artisan storage:link
+	php artisan serve
+	

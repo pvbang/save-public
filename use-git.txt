@@ -1,0 +1,52 @@
+# Use-Git
+
+// Đăng nhập git (đăng nhập lúc mới tải git, sau này không cần nữa)
+- git config --global user.name "abc"
+- git config --global user.email abc@gmail.com
+
+// Create new repository (tạo dự án mới, trưởng dự án tạo)
+git init
+git add .
+git commit -m "messenger"
+git branch -M main
+git remote add origin https://github.com/ilyouu/Use-Git.git       /// <<link repository>>.git
+git push -u origin main
+
+
+// Lấy repository về máy
+git clone https://github.com/ilyouu/Use-Git.git       /// <<link repository>>.git
+
+// Tạo nhánh mới
+git checkout -b nhanh1      /// nhanh1 là tên nhánh, thường đặt tên của bản thân
+hoặc
+git branch nhanh1
+
+// Kiểm tra nhánh
+git branch
+
+// Cập nhật code từ máy lên github
+git add .
+git commit -m " "       /// -m "ghi chú, ví dụ: Sửa lỗi abc" 
+git push                /// hoặc git push origin nhanh1
+
+// Cập nhật code từ github về máy
+git pull                /// hoặc git push origin main
+
+// Đi đến nhánh khác
+git checkout nhanh1     /// nhanh1 là tên nhánh muốn đến
+
+// Gộp nhánh
+git checkout main
+git merge nhanh1        /// gộp nhanh1 vào nhánh main, tức là lưu thay đổi từ nhanh1 vào main
+
+// Xoá nhánh
+git checkout -d nhanh1
+
+// Xem vị trí hiện tại và các nhánh khác
+git log --oneline
+
+// Phục hồi code từ commit cuối
+git restore .
+
+// Phục hồi từ commit bất kỳ
+git checkout 000000 -- .      /// 000000 là mã commit, sau -- có thể chọn file muốn phục hồi
