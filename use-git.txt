@@ -1,36 +1,29 @@
 # Use-Git
 
 // Đăng nhập git (đăng nhập lúc mới tải git, sau này không cần nữa)
-- git config --global user.name "abc"
-- git config --global user.email abc@gmail.com
+- git config --global user.name "abc"                   // abc là tên tài khoản git, cần vào github để tạo tài khoản trước
+- git config --global user.email abc@gmail.com          // email dùng để đăng ký tài khoản trên
 
 // Create new repository (tạo dự án mới, trưởng dự án tạo)
 git init
 git add .
 git commit -m "messenger"
 git branch -M main
-git remote add origin https://github.com/ilyouu/Use-Git.git       /// <<link repository>>.git
+git remote add origin https://github.com/ilyouu/save-public.git       /// <<link repository>>.git
 git push -u origin main
 
 
+
 // Lấy repository về máy
-git clone https://github.com/ilyouu/Use-Git.git       /// <<link repository>>.git
+git clone https://github.com/ilyouu/save-public.git       /// <<link repository>>.git
 
 // Tạo nhánh mới
-git checkout -b nhanh1      /// nhanh1 là tên nhánh, thường đặt tên của bản thân
+git checkout -b nhanh1      /// nhanh1 là tên nhánh, thường đặt tên của bản thân hoặc tính năng mới, ví dụ feature/cat-class
 hoặc
 git branch nhanh1
 
 // Kiểm tra nhánh
 git branch
-
-// Cập nhật code từ máy lên github
-git add .
-git commit -m " "       /// -m "ghi chú, ví dụ: Sửa lỗi abc" 
-git push                /// hoặc git push origin nhanh1
-
-// Cập nhật code từ github về máy
-git pull                /// hoặc git push origin main
 
 // Đi đến nhánh khác
 git checkout nhanh1     /// nhanh1 là tên nhánh muốn đến
@@ -45,8 +38,26 @@ git checkout -d nhanh1
 // Xem vị trí hiện tại và các nhánh khác
 git log --oneline
 
+
+
+// Cập nhật code từ máy lên github
+git add .
+git commit -m "note"       /// -m "..." nơi viết ghi chú về điều mình vừa thực hiện, ví dụ: git commit -m "Fix: missing eat function" 
+git push                   /// hoặc git push origin nhanh1
+
+// Cập nhật code từ github về máy
+git pull                   /// hoặc git pull origin main
+
+
+
 // Phục hồi code từ commit cuối
 git restore .
 
 // Phục hồi từ commit bất kỳ
 git checkout 000000 -- .      /// 000000 là mã commit, sau -- có thể chọn file muốn phục hồi
+
+
+
+
+
+dev: Phan Văn Bằng
