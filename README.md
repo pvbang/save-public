@@ -1,1 +1,3 @@
-## Save Everything ^^!
+```bash
+Save Everything ^^!
+```
