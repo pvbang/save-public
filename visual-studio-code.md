@@ -1,5 +1,5 @@
-#Tool download:
-
+### Tool download:
+```
 auto import
 auto rename tag
 boolmarks
@@ -15,7 +15,9 @@ npm intellisense
 prettier
 settings sync
 visual studio intellicode
+```
 
-
-#Format code:
+### Format code:
+```
 Shift + Alt + F
+```
