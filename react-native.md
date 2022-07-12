@@ -5,8 +5,8 @@
 https://reactnative.dev/docs/environment-setup)
 ```
 
+### Download:
 ```bash
-# dowload: 
 Nodejs
 Vscode
 ```
