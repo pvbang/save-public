@@ -1,9 +1,20 @@
-document: https://reactnative.dev/docs/environment-setup
+## React native tutorial
 
-dowload: nodejs, vscode
+```bash
+# document: 
+https://reactnative.dev/docs/environment-setup)
+```
+
+```bash
+# dowload: 
+Nodejs
+Vscode
+```
 
 ### In Terminal:
+```bash
 npm install -g react-native-cli && npm install -g react-native
 npx react-native init NameProject
 cd NameProject
 code .
+```
