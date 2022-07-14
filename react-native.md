@@ -55,3 +55,12 @@ yarn add @react-navigation/stack
 ```
 yarn add react-native-vector-icons @react-native-community/masked-view react-native-gesture-handler react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-screens react-native-tab-view @react-navigation/bottom-tabs react-navigation-drawer @react-navigation/elements @react-navigation/material-bottom-tabs react-navigation-drawer @react-navigation/elements @react-navigation/material-bottom-tabs @react-navigation/material-top-tabs @react-navigation/native-stack @react-navigation/native @react-navigation/stack
 ```
+
+### Expo:
+```bash
+# install expo:
+npm install --global expo-cli
+
+# run app:
+expo start
+```
