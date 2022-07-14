@@ -18,6 +18,8 @@ npx react-native init NameProject
 cd NameProject
 code .
 
+npm install --global yarn
+
 # connect to device and run:
 yarn android
 ```
