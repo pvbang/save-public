@@ -24,14 +24,11 @@ yarn android
 
 ### Navigation:
 ```bash
-yarn add react-navigation
-yarn add react-native-safe-area-context
-yarn add @react-navigation/bottom-tabs
-yarn add @react-navigation/native
-yarn add @react-navigation/native-stack
+# document: 
+https://reactnavigation.org/docs/getting-started
 ```
 
-### Maybe run:
+### Maybe use Library:
 ```bash
 yarn add react-native-vector-icons
 yarn add @react-native-community/masked-view
@@ -50,4 +47,9 @@ yarn add @react-navigation/material-top-tabs
 yarn add @react-navigation/native-stack
 yarn add @react-navigation/native
 yarn add @react-navigation/stack
+```
+
+### Super Library :)))
+``
+yarn add react-native-vector-icons @react-native-community/masked-view react-native-gesture-handler react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-screens react-native-tab-view @react-navigation/bottom-tabs react-navigation-drawer @react-navigation/elements @react-navigation/material-bottom-tabs react-navigation-drawer @react-navigation/elements @react-navigation/material-bottom-tabs @react-navigation/material-top-tabs @react-navigation/native-stack @react-navigation/native @react-navigation/stack
 ```
