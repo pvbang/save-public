@@ -1,4 +1,4 @@
-## React native tutorial
+## React Native
 
 ```bash
 # document: 
@@ -7,8 +7,8 @@ https://reactnative.dev/docs/environment-setup)
 
 ### Download:
 ```bash
-Nodejs
-Vscode
+nodejs
+vscode
 ```
 
 ### In Terminal:
@@ -18,11 +18,11 @@ npx react-native init NameProject
 cd NameProject
 code .
 
-# connect to device
+# connect to device and run:
 yarn android
 ```
 
-### Navigation:
+### React Navigation:
 ```bash
 # document: 
 https://reactnavigation.org/docs/getting-started
