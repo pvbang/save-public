@@ -67,5 +67,5 @@ expo start
 
 ### Icon:
 ```bash
-https://fontawesome.com/v6/docs/web/use-with/react-native
+https://github.com/oblador/react-native-vector-icons
 ```
