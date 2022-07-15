@@ -64,3 +64,8 @@ npm install --global expo-cli
 # run app:
 expo start
 ```
+
+### Icon:
+```bash
+https://fontawesome.com/v6/docs/web/use-with/react-native
+```
