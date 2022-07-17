@@ -81,3 +81,27 @@ https://viblo.asia/p/su-dung-axios-voi-react-1Je5E4zAlnL
 # fix TypeError: Network request failed
 adb reverse tcp:8000 tcp:8000
 ```
+
+### Font:
+```bash
+# link fonts:
+https://fonts.google.com/
+
+# install:
+yarn global add react-native-asset  # or: npm install -g react-native-asset
+
+# create react-native.config.js and paste:
+module.exports = {
+    project: {
+      ios: {},
+      android: {},
+    },
+    assets: ['./src/fonts'],
+};
+
+# and run:
+npx react-native-asset
+
+# use: 
+<Text style={{ fontFamily: '...' }}> ... </Text>
+```
