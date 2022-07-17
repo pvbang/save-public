@@ -68,6 +68,7 @@ expo start
 ### Icon:
 ```bash
 https://github.com/oblador/react-native-vector-icons
+# https://ionic.io/ionicons
 ```
 
 ### API:
