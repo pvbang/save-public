@@ -69,3 +69,11 @@ expo start
 ```bash
 https://github.com/oblador/react-native-vector-icons
 ```
+
+### API:
+```bash
+yarn add axios
+
+# document:
+https://viblo.asia/p/su-dung-axios-voi-react-1Je5E4zAlnL
+```
