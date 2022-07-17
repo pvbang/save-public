@@ -76,4 +76,7 @@ yarn add axios
 
 # document:
 https://viblo.asia/p/su-dung-axios-voi-react-1Je5E4zAlnL
+
+# fix TypeError: Network request failed
+adb reverse tcp:8000 tcp:8000
 ```
