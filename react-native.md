@@ -20,8 +20,8 @@ code .
 
 npm install --global yarn
 
-# connect to device and run:
-yarn android
+# connect to device (turn on USB debuging) and run:
+yarn android    # or: npx react-native run-android
 ```
 
 ### React Navigation:
