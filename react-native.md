@@ -67,8 +67,14 @@ expo start
 
 ### Icon:
 ```bash
+# document: 
 https://github.com/oblador/react-native-vector-icons
-# https://ionic.io/ionicons
+
+# icon:
+https://ionic.io/ionicons
+
+# edit android/app/build.gradle and add the following:
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 ### API:
