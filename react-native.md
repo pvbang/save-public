@@ -28,6 +28,17 @@ yarn android    # or: npx react-native run-android
 ```bash
 # document: 
 https://reactnavigation.org/docs/getting-started
+
+yarn add @react-navigation/native
+
+# located in android/app/src/main/java/<your package name>/MainActivity.java and paste
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
+
+# and make sure to add an import statement at the top of this file:
+import android.os.Bundle;
 ```
 
 ### Maybe use Library:
