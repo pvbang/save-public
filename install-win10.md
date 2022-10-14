@@ -1,15 +1,14 @@
-## Install win10
+## Install Win10:
 ```bash
-# full file
 https://drive.google.com/drive/folders/1iloderuHP36pK-1QOCTVG7rQ3G90-zEQ?usp=sharing
 ```
 
-### Download file ISO:
+### Download File ISO:
 ```bash
 https://drive.google.com/file/d/1UBtmDTJoWUOud2uV9eXt5xa_gq3YKdr3/view?fbclid=IwAR2hijuOYvL3cJhj0Joddp2lbtwLtpVGJIX5kgntBfysBXluyzT_YU6QMac
 ```
 
-### Link youtube:
+### Link Youtube:
 ```bash
 https://www.youtube.com/watch?v=CjrmMy5RBF4
 # or
@@ -43,7 +42,7 @@ echo ===========================================================================
 pause >nul
 ```
 
-### Activate Office 2022:
+### Activate Office 2021:
 ```bash
 @echo off
 title Activate Microsoft Office 2021 (ALL versions) for FREE - MSGuides.com&cls&echo =====================================================================================&echo #Project: Activating Microsoft software products for FREE without additional software&echo =====================================================================================&echo.&echo #Supported products:&echo - Microsoft Office Standard 2021&echo - Microsoft Office Professional Plus 2021&echo.&echo.&(if exist "%ProgramFiles%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office16")&(if exist "%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office16")&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x" >nul)&echo.&echo =====================================================================================&echo Activating your product...&cscript //nologo slmgr.vbs /ckms >nul&cscript //nologo ospp.vbs /setprt:1688 >nul&cscript //nologo ospp.vbs /unpkey:6F7TH >nul&set i=1&cscript //nologo ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH >nul||goto notsupported
