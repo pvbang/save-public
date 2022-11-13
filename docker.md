@@ -2,10 +2,18 @@
 
 ### Document
 ```bash
+# Docker docs
+https://docs.docker.com/get-started/
+
+# Install and Use Docker on Ubuntu 20.04
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+# Develop a Docker Application on Windows using WSL, Visual Studio Code, and Docker Desktop
+https://www.digitalocean.com/community/tutorials/how-to-develop-a-docker-application-on-windows-using-wsl-visual-studio-code-and-docker-desktop
 ```
 
-### Install and Use Docker on Ubuntu 20.04
+## Docker on Ubuntu 20.04
+### Install
 ```bash
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -31,15 +39,24 @@ docker [option] [command] [arguments]
 
 ### Working with Docker Images
 ```bash
+# To check whether you can access and download images from Docker Hub, type:
 docker run hello-world
+
+# You can search for images available on Docker Hub by using the docker command with the search subcommand. For example, to search for the Ubuntu image, type:
 docker search ubuntu
+
+# Execute the following command to download the official ubuntu image to your computer:
 docker pull ubuntu
+
+# To see the images that have been downloaded to your computer, type:
 docker images
 ```
 
 ### Running a Docker Container
 ```bash
+# As an example, let’s run a container using the latest image of Ubuntu. The combination of the -i and -t switches gives you interactive shell access into the container:
 docker run -it ubuntu
+
 apt update
 apt install nodejs
 node -v
@@ -73,3 +90,37 @@ docker rm youthful_curie
 ```bash
 docker commit -m "What you did to the image" -a "Author Name" container_id repository/new_image_name
 ```
+
+### Pushing Docker Images to a Docker Repository
+```bash
+# To push your image, first log into Docker Hub
+docker login -u docker-registry-username
+
+# Then you may push your own image using:
+docker push docker-registry-username/docker-image-name
+
+# To push the ubuntu-nodejs image to the sammy repository, the command would be:
+docker push sammy/ubuntu-nodejs
+```
+
+
+## Docker on Windows
+### Prerequisites
+In order to follow along with this guide, you’ll need:
+
+- Personal Computer with Windows 10 and the WSL 2 installed: https://www.digitalocean.com/community/tutorials/how-to-install-the-windows-subsystem-for-linux-2-on-microsoft-windows-10
+- VSCode Installed
+
+### Install
+```bash
+https://docs.docker.com/desktop/install/windows-install/
+```
+
+
+
+
+
+
+
+
+
