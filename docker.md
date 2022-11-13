@@ -134,3 +134,46 @@ docker run -dp 3000:3000 getting-started
 ```
 
 
+
+
+
+
+
+## Build Docker:
+
+### Docker file
+```bash
+# in source code
+touch Dockerfile
+
+# open Dockerfile and write
+FROM centos:latest
+
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN yum update -y
+RUN yum install httpd httpd-tools -y
+RUN yum install vim -y
+RUN yum install epel-release -y
+RUN yum update -y
+RUN yum install htop -y
+
+WORKDIR /var/www/html
+EXPOSE 80
+
+ADD ./test.html /var/www/html/
+
+ENTRYPOINT [ "httpd" ]
+CMD [ "-D", "FOREGROUND"]
+```
+
+### Run Dockerfile
+```bash
+docker build --rm -t dockerfileimage -f Dockerfile .
+```
+
+### Run Container
+```bash
+docker run --rm -p 6789:80 dockerfileimage
+```
