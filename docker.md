@@ -87,18 +87,21 @@ docker rm youthful_curie
 ### Committing Changes in a Container to a Docker Image
 ```bash
 docker commit -m "What you did to the image" -a "Author Name" container_id repository/new_image_name
+
+# Example
+docker commit -m "upload test docker" -a "ilyouu" 0c123b45679c ilyouu/test_docker
 ```
 
 ### Pushing Docker Images to a Docker Repository
 ```bash
-# To push your image, first log into Docker Hub
+# Login docker hub
 docker login -u docker-registry-username
 
-# Then you may push your own image using:
+# Push
 docker push docker-registry-username/docker-image-name
 
-# To push the ubuntu-nodejs image to the sammy repository, the command would be:
-docker push sammy/ubuntu-nodejs
+# Example
+docker push ilyouu/test_docker
 ```
 
 
