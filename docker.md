@@ -4,15 +4,13 @@
 ```bash
 # Docker docs
 https://docs.docker.com/get-started/
-
-# Install and Use Docker on Ubuntu 20.04
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-
-# Develop a Docker Application on Windows using WSL, Visual Studio Code, and Docker Desktop
-https://www.digitalocean.com/community/tutorials/how-to-develop-a-docker-application-on-windows-using-wsl-visual-studio-code-and-docker-desktop
 ```
 
 ## Docker on Ubuntu 20.04
+### Document
+```
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+```
 ### Install
 ```bash
 sudo apt update
@@ -104,7 +102,21 @@ docker push sammy/ubuntu-nodejs
 ```
 
 
+
+## Docker Desktop on Ubuntu 
+### Document
+```
+https://computingforgeeks.com/install-docker-desktop-on-ubuntu/
+```
+
+
+
+
 ## Docker on Windows
+### Document
+```
+https://www.digitalocean.com/community/tutorials/how-to-develop-a-docker-application-on-windows-using-wsl-visual-studio-code-and-docker-desktop
+```
 ### Prerequisites
 In order to follow along with this guide, you’ll need:
 
@@ -112,15 +124,13 @@ In order to follow along with this guide, you’ll need:
 - VSCode Installed
 
 ### Install
-```bash
+```
 https://docs.docker.com/desktop/install/windows-install/
 ```
 
-
-
-
-
-
-
+### Example
+```bash
+docker run -dp 3000:3000 getting-started
+```
 
 
