@@ -144,7 +144,7 @@ docker run -dp 3000:3000 getting-started
 
 ## Build Docker:
 
-### Docker file
+### Create Dockerfile
 ```bash
 # in source code
 touch Dockerfile
