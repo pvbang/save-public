@@ -9,7 +9,7 @@ https://cuongquach.com/download-vmware-workstation-pro-15-full-key-phan-mem-ao-h
 https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso
 ```
 
-# Change password root:
+### Change password root:
 ```bash
 sudo passwd root
 
