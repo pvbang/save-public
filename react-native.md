@@ -13,15 +13,16 @@ vscode
 
 ### In Terminal:
 ```bash
-npm install -g react-native-cli && npm install -g react-native
-npx react-native init NameProject
+# If you previously installed a global react-native-cli package, please remove it as it may cause unexpected issues:
+npm uninstall -g react-native-cli @react-native-community/cli
+
+npx react-native@latest init NameProject
 cd NameProject
 code .
 
-npm install --global yarn
-
+npx react-native start
 # connect to device (turn on USB debuging) and run:
-yarn android    # or: npx react-native run-android
+npx react-native run-android
 ```
 
 ### React Navigation:
