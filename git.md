@@ -75,3 +75,18 @@ git restore .
 git checkout 000000 -- .      # 000000 là mã commit, sau -- có thể chọn file muốn phục hồi
 ```
 
+
+### Cách gộp các lệnh lại làm 1 cho nhanh và tiện lợi
+```bash
+# ví dụ muốn gộp 3 câu lệnh: 
+# git add . 
+# git commit -m "..."
+# git push
+
+git config --global --edit
+# dưới [alias] thêm dòng sau 
+up = "!f() { git add . && git commit -m \"$1\" && git push; }; f"
+
+# sau này nếu muốn push một commit lên git thì chỉ cần
+git up "message"
+```

@@ -9,7 +9,7 @@ https://docs.docker.com/get-started/
 ## Docker on Ubuntu 20.04
 ### Document
 ```
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+https://phoenixnap.com/kb/install-docker-on-ubuntu-20-04
 ```
 ### Install
 ```bash
@@ -104,6 +104,20 @@ docker push docker-registry-username/docker-image-name
 docker push ilyouu/test_docker
 ```
 
+
+### Node-red in Docker
+```bash
+# pvbang is user name
+docker run -it -p 1880:1880 -v /home/pvbang/.node-red:/data --name pvbang nodered/node-red
+
+# run if stop
+docker start pvbang
+
+docker attach pvbang
+
+# upload to host: using ngrok
+ngrok http 1880
+```
 
 
 ## Docker Desktop on Ubuntu 
