@@ -7,18 +7,18 @@ I‘m building a chatbot with the Messenger Platform. I want that my chatbot wil
 Can you please use our Tester account to test the chatbot, we will provide one below. We make sure the chatbot is well tested and works well with our Tester and Developer accounts. Thanks.
 
 -- Facebook tester account (Tester account in my Chatbot):
-Email: ---@gmail.com
-Password: ---
++ Email: ---@gmail.com
++ Password: ---
 ```
 
 ### Please provide step-by-step instructions to walk us through how to test this integration
 ```
 Steps to test my Chatbot:
 
-1. Log in to Facebook with Tester account with the following information:
-Email: ---@gmail.com
-Password: ---
+1. Going to my Facebook page: m.me/10009-------502
+--Login to Facebook with Tester account with the following information:
++ Email: ---@gmail.com
++ Password: ---
 
-2. Going to my Facebook page: m.me/10009-------502 with Tester account.
-3. Test my chatbot (A Spa services Chatbot).
+2. Test my chatbot.
 ```
