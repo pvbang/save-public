@@ -83,6 +83,7 @@ git checkout 000000 -- .      # 000000 là mã commit, sau -- có thể chọn f
 # git commit -m "..."
 # git push
 
+git config --global core.editor "code --wait"
 git config --global --edit
 # dưới [alias] thêm dòng sau 
 up = "!f() { git add . && git commit -m \"$1\" && git push; }; f"
