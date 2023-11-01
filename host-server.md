@@ -144,10 +144,7 @@ uvicorn app:app --host 45.90.108.32 --port 1002
 
    SSLEngine on
    SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
-   SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
-   
-   ProxyPass /mekongai-chatbot http://45.90.108.32:1002/
-   ProxyPassReverse /mekongai-chatbot http://45.90.108.32:1002/       
+   SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem     
    
    ProxyPass /mekongai-chatbot/ http://45.90.108.32:1002/
    ProxyPassReverse /mekongai-chatbot/ http://45.90.108.32:1002/
