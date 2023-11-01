@@ -21,6 +21,11 @@ screen -ls
 
 # xóa screen
 screen -XS <session-id> quit
+
+# bình thường dùng
+screen -ls
+screen -XS chatbot quit
+screen -S chatbot
 ```
 
 ### Run server python trên host
@@ -33,67 +38,123 @@ uvicorn app:app --host 111.111.111.111 --port 1000
 
 
 
-
-### Host server python using apache2
+### Install Apache2
 ```bash
-# nhớ thay example.com thành tên domain
+# link
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04
 
-# cài đặt client Let’s Encrypt
-sudo add-apt-repository ppa: certbot / certbot
-sudo apt-get update
-sudo apt-get install python-certbot-apache
+sudo apt update
+sudo apt install apache2
+sudo ufw allow 'Apache'
 
-# install chứng chỉ ssl
-sudo certbot --apache -d example.com        # sudo certbot --apache -d example.com -d www.example.com
-
-# test ssl online
-https://www.ssllabs.com/ssltest/analyze.html?d=example.com&latest
-
-# tư động gia hạn chứng chỉ
-sudo certbot renew --dry-run
-
-# chỉnh sửa host
-# 
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf
-
-# nano vào địa chỉ sau để chỉnh sửa file
-nano /etc/apache2/sites-available/example.com.conf
-
-# thay setting này vào file example.com.conf
+sudo nano /etc/apache2/sites-available/example.conf
 <VirtualHost *:80>
-    #ServerName www.example.com
-
-    ServerName server-name
     ServerAdmin webmaster@localhost
-    ServerAlias server-alias
-    
-    #DocumentRoot /document/root/
-
-    <Proxy *>
-        AuthType none
-        AuthBasicAuthoritative Off
-        SetEnv proxy-chain-auth On
-        Order allow,deny
-        Allow from all
-    </Proxy>
-
-    ProxyPass / http://127.0.0.1:port/
-    ProxyPassReverse / http://127.0.0.1:port/
-
-    <Directory /document/root/>
-        Order deny,allow
-        Allow from all
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/server-error.log
-    LogLevel debug
-    CustomLog ${APACHE_LOG_DIR}/server-access.log combined
+    ServerName example
+    ServerAlias www.example
+    DocumentRoot /var/www/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
-# cài đặt proxy và restart apache
-sudo a2enmod proxy
-sudo a2enmod proxy_http
+sudo a2ensite example.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+```
+
+
+
+### Host server using apache2
+```bash
+# link
+https://galaxyz.net/cach-su-dung-che-do-doc-lap-cua-certbot-de-lay-chung-chi-ssl-ma-hoa-tren-ubuntu-1604.3113.anews
+
+# nhớ thay example.com thành tên domain
+
+# cài certbot
+sudo add-apt-repository ppa:certbot/certbot 
+sudo apt-get update 
+sudo apt-get install certbot
+
+sudo ufw allow 80
+sudo service apache2 stop
+
+# nhận chứng chỉ
+sudo certbot certonly --standalone --preferred-challenges http -d example.com 
+
+# cấu hình trong nano /etc/apache2/sites-available/example.com.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@example.com
+    ServerName example.com
+    Redirect / https://example.com/
+    ServerAlias www.example.com
+    DocumentRoot /var/www/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+   ServerName example.com
+   DocumentRoot /var/www/html
+
+   SSLEngine on
+   SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
+   SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+</VirtualHost>
+
+# kích hoạt cấu hình example.conf
+sudo a2ensite example.conf
+sudo a2dissite 000-default.conf
+
+# reset apache2
 sudo systemctl restart apache2
 
 # bước cuối cùng: cầu nguyện cho nó không gặp lỗi nào :v
+```
+
+
+
+
+### Cấu hình cho python
+```bash
+# ví dụ cấu hình python
+screen -ls
+screen -XS chatbot quit
+screen -S chatbot
+cd mekongai-chatbot/
+pip install -r requirements.txt
+uvicorn app:app --host 45.90.108.32 --port 1002
+
+
+# nano /etc/apache2/sites-available/example.com.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@example.com
+    ServerName example.com
+    Redirect / https://example.com/
+    ServerAlias www.example.com
+    DocumentRoot /var/www/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+   ServerName example.com
+   DocumentRoot /var/www/html
+
+   SSLEngine on
+   SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
+   SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+   
+   ProxyPass /mekongai-chatbot http://45.90.108.32:1002/
+   ProxyPassReverse /mekongai-chatbot http://45.90.108.32:1002/       
+   
+   ProxyPass /mekongai-chatbot/ http://45.90.108.32:1002/
+   ProxyPassReverse /mekongai-chatbot/ http://45.90.108.32:1002/
+</VirtualHost>
+
+#
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo systemctl restart apache2
 ```
