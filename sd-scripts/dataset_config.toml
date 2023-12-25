@@ -1,0 +1,7 @@
+[[datasets]]
+
+    [[datasets.subsets]]
+    image_dir = '/home/ubuntu/pvbang/trainings/img'
+    caption_extension = '.txt'
+    class_tokens = 'cosmetictubedesign'
+    num_repeats = 50
