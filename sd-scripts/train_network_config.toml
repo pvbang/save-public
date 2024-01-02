@@ -1,11 +1,11 @@
 pretrained_model_name_or_path = "/home/ubuntu/pvbang/vb-sd-data/models/absolutereality_v181.safetensors"
 caption_extension = ".txt"
-resolution = "768,768"
+resolution = "512,512"
 cache_latents = true
 enable_bucket = true
 bucket_no_upscale = true
 output_dir = "/home/ubuntu/pvbang/trainings/output"
-output_name = "cosmetictubedesign"
+output_name = "name-lora"
 save_precision = "fp16"
 save_every_n_epochs = 1
 train_batch_size = 2

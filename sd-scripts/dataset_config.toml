@@ -1,7 +1,7 @@
 [[datasets]]
 
     [[datasets.subsets]]
-    image_dir = '/home/ubuntu/pvbang/trainings/img'
+    image_dir = '/home/ubuntu/pvbang/trainings/images'
     caption_extension = '.txt'
-    class_tokens = 'cosmetictubedesign'
+    class_tokens = 'name-lora'
     num_repeats = 50
