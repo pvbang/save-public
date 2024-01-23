@@ -14,7 +14,6 @@ git clone https://github.com/facefusion/facefusion
 cd facefusion
 
 python3.11 -m venv venv
-
 source venv/bin/activate
 
 python install.py

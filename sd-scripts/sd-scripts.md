@@ -3,7 +3,7 @@
 https://www.youtube.com/watch?v=Tp7WR9Qb9vk&t
 ```
 
-###
+### Clone
 ```bash
 git clone https://github.com/kohya-ss/sd-scripts.git
 ```
@@ -45,3 +45,5 @@ conda update -n base -c defaults conda
 # train caption
 https://colab.research.google.com/drive/1_WbjLtik3YZqdvcU5iU8x6PsxyHpVzPu?usp=sharing
 ```
+
+

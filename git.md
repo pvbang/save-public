@@ -14,6 +14,17 @@ git commit -m "messenger"
 git branch -M main
 git remote add origin https://github.com/ilyouu/save-public.git       # <<link repository>>.git
 git push -u origin main
+
+# ví dụ
+# ```
+echo "# unity2d-game-sieu-anh-hung" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/pvbang/unity2d-game-sieu-anh-hung.git
+git push -u origin main
+# ```
 ```
 
 ### Clone repository (Lấy repository về máy)
@@ -90,4 +101,33 @@ up = "!f() { git add . && git commit -m \"$1\" && git push; }; f"
 
 # sau này nếu muốn push một commit lên git thì chỉ cần
 git up "message"
+```
+
+### Git LFS (github chỉ cho phép upload file <100mb nên nếu cần up file >100mb thì dùng cái này)
+```bash
+# document
+https://git-lfs.com/
+
+# dùng
+git lfs install
+git lfs track "*.psd"
+git add .gitattributes
+
+# ví dụ config trong .gitattributes
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.psb filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.aar filter=lfs diff=lfs merge=lfs -text
+Library/PackageCache/com.unity.burst@1.8.7/.Runtime/hostmac/dsymutil filter=lfs diff=lfs merge=lfs -text
+*dsymutil filter=lfs diff=lfs merge=lfs -text
+```
+
+### Fix lỗi
+```bash
+# lỗi push khi file quá lớn (ví dụ ở dưới là 12GB)
+# nên chia ra và push nhiều lần 
+git config --global http.postBuffer 12000000000
+git config --global https.postBuffer 12000000000
 ```

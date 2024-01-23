@@ -25,7 +25,6 @@ wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/m
 ```bash
 # linux
 python3.11 -m venv venv
-
 source venv/bin/activate
 
 ./webui.sh --medvram --no-half-vae --xformers --share --enable-insecure-extension-access --api
