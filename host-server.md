@@ -8,6 +8,7 @@ password123                 # password
 
 ### Truy cập server thông qua pem file
 ```bash
+chmod 600 file.pem
 ssh -i file.pem root@111.111.111.111        # host
 ```
 
@@ -34,10 +35,6 @@ screen -S chatbot
 uvicorn app:app --host 111.111.111.111 --port 1000
 ```
 
-
-
-
-
 ### Install Apache2
 ```bash
 # link
@@ -62,8 +59,6 @@ sudo a2dissite 000-default.conf
 sudo apache2ctl configtest
 sudo systemctl restart apache2
 ```
-
-
 
 ### Host server using apache2
 ```bash
@@ -114,6 +109,14 @@ sudo systemctl restart apache2
 ```
 
 
+### Renew (Let's Encrypt certificate expiration notice for domain)
+```bash
+sudo systemctl stop apache2
+sudo certbot renew
+
+# check
+sudo certbot renew --dry-run
+```
 
 
 ### Cấu hình cho python
@@ -154,4 +157,29 @@ uvicorn app:app --host 45.90.108.32 --port 1002
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo systemctl restart apache2
+```
+
+
+### Nvidia
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo reboot
+```
+
+### Permission denied 
+```bash
+sudo chown -R ubuntu.ubuntu /folder-name
+```
+
+### AWS
+```bash
+https://stackoverflow.com/questions/57765350/how-to-copy-multiple-file-from-local-to-s3
+
+# local to aws
+aws s3 cp C:\pvbang s3://therhome-video --recursive
+
+# aws to local
+aws s3 cp s3://therhome-video C:\pvbang --recursive     ## aws s3 cp s3://therhome-video/models /tmp2/pvbang/ComfyUI/models --recursive
 ```
