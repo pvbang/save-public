@@ -183,3 +183,24 @@ aws s3 cp C:\pvbang s3://therhome-video --recursive
 # aws to local
 aws s3 cp s3://therhome-video C:\pvbang --recursive     ## aws s3 cp s3://therhome-video/models /tmp2/pvbang/ComfyUI/models --recursive
 ```
+
+
+### Tạo remote desktop cho vps
+```bash
+sudo apt update
+sudo apt install ubuntu-desktop -y
+ sudo apt install xrdp -y
+sudo adduser xrdp ssl-cert
+
+sudo systemctl restart xrdp
+sudo passwd ubuntu
+
+
+/etc/xrdp/xrdp.ini
+
+sudo nano /etc/xrdp/startwm.sh
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+
+sudo systemctl restart xrdp
+```

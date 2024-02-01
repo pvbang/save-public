@@ -17,7 +17,9 @@ secred: GOCSPX- ya1tpak0q51J 17T8g8lxhqYtbE19
 
 ### Use
 ```bash
-rclone copy /home/ubuntu/pvbang/ pvbang:Backup
+rclone copy /home/ubuntu/pvbang/ pvbang:Backup --multi-thread-cutoff 500MiB -L
+
+rclone copy /tmp2/pvbang/ComfyUI/ pvb:comfyuibackup --multi-thread-cutoff 500MiB -L
 ```
 
 ### Auto sync
@@ -27,6 +29,7 @@ crontab -e
 
 # sync vào 3h sáng
 0 3 * * * /usr/sbin/rclone copy /home/ubuntu/pvbang/ pvbang:Backup
+0 1 * * * /usr/sbin/rclone copy /tmp2/pvbang/ComfyUI/ pvb:comfyuibackup --multi-thread-cutoff 500MiB -L
 
 # sync 2 tiếng 1 lần
 0 */2 * * * /usr/sbin/rclone copy /home/ubuntu/pvbang/ pvbang:Backup

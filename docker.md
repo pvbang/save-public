@@ -18,8 +18,9 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 apt-cache policy docker-ce
-
 sudo apt install docker-ce
+
+sudo systemctl status docker
 ```
 
 ### Executing the Docker Command Without Sudo (Optional)
@@ -189,4 +190,22 @@ docker build --rm -t dockerfileimage -f Dockerfile .
 ### Run Container
 ```bash
 docker run --rm -p 6789:80 dockerfileimage
+```
+
+### Xóa
+```bash
+sudo systemctl stop docker.service
+sudo apt remove docker-ce docker-ce-cli containerd.io
+sudo rm -rf /var/lib/docker
+sudo rm -rf /etc/docker
+sudo rm -rf /etc/systemd/system/docker.service.d
+sudo rm -rf ~/.docker
+sudo rm -rf /var/run/docker.sock
+docker container prune
+docker image prune -a
+docker volume prune
+
+sudo systemctl restart apache2
+sudo reboot
+
 ```
