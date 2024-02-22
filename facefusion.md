@@ -19,6 +19,9 @@ source venv/bin/activate
 python install.py
 
 python run.py
+
+# fix FFMpeg is not installed
+sudo apt install ffmpeg
 ```
 
 

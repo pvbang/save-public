@@ -189,7 +189,7 @@ aws s3 cp s3://therhome-video C:\pvbang --recursive     ## aws s3 cp s3://therho
 ```bash
 sudo apt update
 sudo apt install ubuntu-desktop -y
- sudo apt install xrdp -y
+sudo apt install xrdp -y
 sudo adduser xrdp ssl-cert
 
 sudo systemctl restart xrdp

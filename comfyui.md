@@ -1,18 +1,18 @@
 ### Install
 ```bash
 # github
-https://github.com/comfyanonymous/ComfyUI.git
+git clone https://github.com/comfyanonymous/ComfyUI.git
 
 cd ComfyUI
 python3.11 -m venv venv
 source venv/bin/activate
 
-# install torch
-pip3.11 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.6
-pip3.11 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm5.7
+# AMD GPUs (Linux only)
+# pip3.11 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.7
+pip3.11 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.0
 
-# install nvidia
-pip3.11 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121
+# NVIDIA
+# pip3.11 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121
 pip3.11 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
 
 # fix "Torch not compiled with CUDA enabled" error
@@ -25,7 +25,7 @@ pip3.11 install -r requirements.txt
 python3.11 main.py --port 7766 --listen
 
 # use gpu 7
-python3.11 main.py --port 7766 --cuda-device 7
+python3.11 main.py --port 7766 --listen --cuda-device 7
 ```
 
 ### ComfyUI Manager
