@@ -204,3 +204,13 @@ unset XDG_RUNTIME_DIR
 
 sudo systemctl restart xrdp
 ```
+
+### Mở rộng disk
+```bash
+df -h
+lsblk
+
+# xem ổ nào đang dư
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
+```
