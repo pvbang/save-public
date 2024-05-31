@@ -4,7 +4,7 @@
 git clone https://github.com/comfyanonymous/ComfyUI.git
 
 cd ComfyUI
-python3.11 -m venv venv
+python3.10 -m venv venv
 source venv/bin/activate
 
 # AMD GPUs (Linux only)
@@ -33,12 +33,26 @@ python main.py --port 7766 --listen --cuda-device 0
 https://github.com/ltdrdata/ComfyUI-Manager
 
 # install
+python3.10 -m venv venv
+source venv/bin/activate
+
 cd ComfyUI/custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager
 cd ..
-python3.11 -m venv venv
-source venv/bin/activate
-python -m pip install -r requirements.txt
 python -m pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
-python -m pip install torchvision
+```
+
+
+### Config models path
+```bash
+echo "comfyui:
+    checkpoints: /home/ubuntu/pvbang/saves/checkpoints/
+    clip: /home/ubuntu/pvbang/saves/clip/
+    clip_vision: /home/ubuntu/pvbang/saves/clip_vision/
+    configs: /home/ubuntu/pvbang/saves/configs/
+    controlnet: /home/ubuntu/pvbang/saves/controlnet/
+    embeddings: /home/ubuntu/pvbang/saves/embeddings/
+    loras: /home/ubuntu/pvbang/saves/loras/
+    upscale_models: /home/ubuntu/pvbang/saves/upscale_models/
+    vae: /home/ubuntu/pvbang/saves/vae/" > extra_model_paths.yaml
 ```
