@@ -56,3 +56,36 @@ echo "comfyui:
     upscale_models: /home/ubuntu/pvbang/saves/upscale_models/
     vae: /home/ubuntu/pvbang/saves/vae/" > extra_model_paths.yaml
 ```
+
+### Clone ComfyUI
+```bash
+cp -r comfyui-image-generate-1 comfyui-image-generate-2
+screen -S comfyui-image-generate-2
+cd comfyui-image-generate-2
+cd ComfyUI
+source venv/bin/activate
+
+# comfyui-image-generate-1
+python main.py --port 7700 --listen --cuda-device 0
+
+# comfyui-image-generate-2
+python main.py --port 7702 --listen --cuda-device 1
+
+# comfyui-image-generate-3
+python main.py --port 7704 --listen --cuda-device 2
+
+# comfyui-image-generate-4
+python main.py --port 7706 --listen --cuda-device 3
+
+# comfyui-image-generate-5
+python main.py --port 7708 --listen --cuda-device 4
+
+# comfyui-image-generate-6
+python main.py --port 7710 --listen --cuda-device 5
+
+# comfyui-image-generate-7
+python main.py --port 7712 --listen --cuda-device 6
+
+# comfyui-image-generate-8
+python main.py --port 7714 --listen --cuda-device 7
+```
