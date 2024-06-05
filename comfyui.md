@@ -45,6 +45,12 @@ python -m pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 
 ### Config models path
 ```bash
+mkdir saves
+cd saves
+mkdir checkpoints clip clip_vision configs controlnet embeddings loras upscale_models vae
+cd checkpoints
+mkdir SD1.5 SDXL Inpainting SVD
+
 echo "comfyui:
     checkpoints: /home/ubuntu/pvbang/saves/checkpoints/
     clip: /home/ubuntu/pvbang/saves/clip/
@@ -87,5 +93,5 @@ python main.py --port 7710 --listen --cuda-device 5
 python main.py --port 7712 --listen --cuda-device 6
 
 # comfyui-image-generate-8
-python main.py --port 7714 --listen --cuda-device 7
+# python main.py --port 7714 --listen --cuda-device 7
 ```
